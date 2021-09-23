@@ -16,8 +16,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BufReader, decode, puppeteer, resolve } from "./deps.ts";
-import type { Browser, Target } from "./deps.ts";
+import { BufReader, decode, puppeteer, resolve } from './deps.ts';
+import type { Browser, Target } from './deps.ts';
 import type { AppOptions } from "./types.ts";
 import { getLocalDataDir } from "./util.ts";
 
@@ -38,12 +38,12 @@ export async function launch(
   });
   const wsEndpoint = await waitForWSEndpoint(chromeProcess.stderr);
   const browser = await puppeteer.connect({
-    browserWSEndpoint: wsEndpoint,
-    ignoreHTTPSErrors: true,
+      browserWSEndpoint: wsEndpoint,
+      ignoreHTTPSErrors: true
   });
-  await browser.waitForTarget((t: Target) => t.type() === "page");
+  await browser.waitForTarget((t: any) => t.type() === 'page');
   return {
-    browser,
+    browser: browser as any,
     chromeProcess,
   };
 }

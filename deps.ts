@@ -27,7 +27,7 @@ export {
   fail,
 } from "https://deno.land/std@0.95.0/testing/asserts.ts";
 
-export { default as puppeteer } from "https://unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/web.js";
+export { default as puppeteer } from "https://deno.land/x/puppeteer@9.0.1/mod.ts";
 export { EventEmitter } from "https://unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/EventEmitter.js";
 
 export type { Browser } from "https://unpkg.com/puppeteer@10.2.0/lib/esm/puppeteer/common/Browser.js";

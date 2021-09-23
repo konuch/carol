@@ -802,7 +802,7 @@ export async function launch(
       testMode,
       options,
     );
-    const app = new Application(browser, chromeProcess, logger, options);
+    const app = new Application(browser as any, chromeProcess, logger, options);
     await app.init_();
     return app;
   } catch (e) {
